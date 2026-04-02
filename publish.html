@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <title>Creator Registration - TooU</title>
+  <link rel="stylesheet" href="assets/css/shared.css">
+  <link rel="stylesheet" href="assets/css/publish.css">
+</head>
+<body data-page="publish">
+  <div id="site-header"></div>
+
+  <main class="publish-shell">
+    <section class="publish-hero">
+      <a href="index.html" class="page-back-link">
+        <i class="fa-solid fa-arrow-left"></i>
+        <span>Back to Home</span>
+      </a>
+      <div class="publish-chip">Creator Registration</div>
+      <h1>Set up your creator identity before you publish.</h1>
+      <p>Register as an individual creator or a studio, complete the required identity details, and then TooU will send you straight to the upload workspace.</p>
+    </section>
+
+    <section class="publish-layout">
+      <form class="publish-form" id="creatorForm">
+        <div class="account-type">
+          <button type="button" class="account-card active" data-role="individual">
+            <strong>Individual Creator</strong>
+            <span>Perfect for solo authors, artists, and independent storytellers.</span>
+          </button>
+          <button type="button" class="account-card" data-role="studio">
+            <strong>Studio Account</strong>
+            <span>Best for teams publishing under a shared studio identity.</span>
+          </button>
+        </div>
+
+        <section class="panel">
+          <div class="panel-head">
+            <h2>Creator Identity</h2>
+            <p>Tell readers and the platform how this creator profile should appear.</p>
+          </div>
+
+          <div class="field-grid">
+            <label class="field">
+              <span>Display Name</span>
+              <input type="text" name="displayName" placeholder="Creator or artist name" required>
+            </label>
+            <label class="field studio-only hidden">
+              <span>Studio Name</span>
+              <input type="text" name="studioName" placeholder="Studio or collective name">
+            </label>
+            <label class="field">
+              <span>Phone Number</span>
+              <input type="tel" name="phoneNumber" placeholder="+95 9..." required>
+            </label>
+            <label class="field">
+              <span>National ID Card Number</span>
+              <input type="text" name="nationalId" placeholder="Enter ID card number" required>
+            </label>
+            <label class="field field-full">
+              <span>Creator Bio</span>
+              <textarea name="bio" rows="4" placeholder="Short introduction for your creator profile."></textarea>
+            </label>
+          </div>
+        </section>
+
+        <section class="panel">
+          <div class="panel-head">
+            <h2>Creative Profile</h2>
+            <p>Select the style and publishing focus that best matches your work.</p>
+          </div>
+
+          <div class="field-grid">
+            <label class="field">
+              <span>Primary Format</span>
+              <select name="primaryFormat" required>
+                <option value="webtoon">Webtoon</option>
+                <option value="comics">Comics</option>
+                <option value="knowledge">Knowledge</option>
+                <option value="novel">Novel</option>
+              </select>
+            </label>
+            <label class="field">
+              <span>Artist Style</span>
+              <select name="artistStyle" required>
+                <option value="cinematic">Cinematic</option>
+                <option value="clean-line">Clean Line</option>
+                <option value="painterly">Painterly</option>
+                <option value="minimal">Minimal</option>
+                <option value="educational">Educational</option>
+                <option value="prose-first">Prose First</option>
+              </select>
+            </label>
+            <label class="field field-full">
+              <span>Publishing Goals</span>
+              <input type="text" name="goals" placeholder="Example: weekly fantasy webtoon, serialized mystery novel, studio anthology">
+            </label>
+          </div>
+        </section>
+
+        <section class="panel">
+          <div class="panel-head">
+            <h2>Verification</h2>
+            <p>Upload the documents needed for creator verification and payout preparation.</p>
+          </div>
+
+          <div class="field-grid">
+            <label class="field field-full">
+              <span>ID Card Upload</span>
+              <div class="upload-drop">
+                <i class="fa-regular fa-id-card"></i>
+                <strong>Upload front and back of your ID</strong>
+                <small>Accepted formats: JPG, PNG, PDF</small>
+                <input type="file" accept=".jpg,.jpeg,.png,.pdf">
+              </div>
+            </label>
+            <label class="field field-full">
+              <span>Portfolio or Sample Link</span>
+              <input type="url" name="portfolio" placeholder="https://your-portfolio.example">
+            </label>
+          </div>
+        </section>
+
+        <button type="submit" class="submit-creator">Create Creator Account</button>
+        <div class="submit-note" id="creatorMessage">Once this form is completed, the Publish button will take you directly to the upload workspace.</div>
+      </form>
+
+      <aside class="publish-sidebar">
+        <section class="side-panel">
+          <h2>What happens next</h2>
+          <ul>
+            <li>Your creator profile is saved on this device for the frontend flow.</li>
+            <li>The shared Publish button automatically switches to the upload workspace.</li>
+            <li>You can later connect this form to backend verification and payments.</li>
+          </ul>
+        </section>
+
+        <section class="side-panel accent">
+          <h2>Good creator profiles include</h2>
+          <p>A clear creator name, a readable phone number, valid ID details, and a consistent style direction that matches the stories you will publish.</p>
+        </section>
+      </aside>
+    </section>
+  </main>
+
+  <script src="assets/js/layout.js"></script>
+  <script src="assets/js/publish.js"></script>
+</body>
+</html>

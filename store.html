@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <title>Store - TooU</title>
+  <link rel="stylesheet" href="assets/css/store.css">
+  <link rel="stylesheet" href="assets/css/shared.css">
+</head>
+<body data-page="store">
+  <div class="container">
+    <div id="site-header"></div>
+
+    <section class="store-hero">
+      <div class="store-hero-copy">
+        <div class="store-kicker-row">
+          <span class="store-kicker">Store</span>
+          <button type="button" class="store-alert" aria-label="Notifications">
+            <i class="fa-regular fa-bell"></i>
+            <span>5</span>
+          </button>
+        </div>
+        <h1>Support your reading with coins and premium access.</h1>
+        <p>Top up your wallet, unlock subscriber perks, and keep the buying flow in the same TooU reading universe.</p>
+      </div>
+
+      <div class="balance-card">
+        <div class="balance-header">
+          <span>Your Balance</span>
+          <span class="premium-badge">Premium</span>
+        </div>
+        <strong class="balance-total">250 Coins</strong>
+        <p>Subscription expires: March 18, 2026</p>
+      </div>
+    </section>
+
+    <section class="store-shell">
+      <div class="store-tabs" role="tablist" aria-label="Store tabs">
+        <button type="button" class="store-tab active" data-tab="coins" aria-selected="true">Buy Coins</button>
+        <button type="button" class="store-tab" data-tab="sub" aria-selected="false">Subscriptions</button>
+      </div>
+
+      <div class="store-panel active" id="coins" role="tabpanel">
+        <div class="section-heading">
+          <div class="section-title">Coin Packages</div>
+          <div class="section-copy">Pick the top-up that matches how you read, from quick unlocks to longer binge sessions.</div>
+        </div>
+
+        <div class="coin-list">
+          <article class="coin-card">
+            <div class="coin-copy">
+              <div class="coin-title-row">
+                <h2>50 Coins</h2>
+              </div>
+              <p class="coin-price">10,000 MMK</p>
+              <p class="coin-note">A light refill for a few premium chapters.</p>
+            </div>
+            <button type="button" class="store-btn" data-buy="50">Buy Now</button>
+          </article>
+
+          <article class="coin-card">
+            <div class="coin-copy">
+              <div class="coin-title-row">
+                <h2>120 Coins</h2>
+                <span class="coin-bonus">+20 Bonus</span>
+              </div>
+              <p class="coin-price">20,000 MMK</p>
+              <p class="coin-note">Get 140 coins total for regular weekly reading.</p>
+            </div>
+            <button type="button" class="store-btn" data-buy="140">Buy Now</button>
+          </article>
+
+          <article class="coin-card">
+            <div class="coin-copy">
+              <div class="coin-title-row">
+                <h2>300 Coins</h2>
+                <span class="coin-bonus">+50 Bonus</span>
+              </div>
+              <p class="coin-price">40,000 MMK</p>
+              <p class="coin-note">Get 350 coins total for deeper story marathons.</p>
+            </div>
+            <button type="button" class="store-btn" data-buy="350">Buy Now</button>
+          </article>
+
+          <article class="coin-card">
+            <div class="coin-copy">
+              <div class="coin-title-row">
+                <h2>650 Coins</h2>
+                <span class="coin-bonus">+150 Bonus</span>
+              </div>
+              <p class="coin-price">80,000 MMK</p>
+              <p class="coin-note">Get 800 coins total for ongoing premium reading.</p>
+            </div>
+            <button type="button" class="store-btn" data-buy="800">Buy Now</button>
+          </article>
+
+          <article class="coin-card">
+            <div class="coin-copy">
+              <div class="coin-title-row">
+                <h2>1500 Coins</h2>
+                <span class="coin-bonus">+400 Bonus</span>
+              </div>
+              <p class="coin-price">160,000 MMK</p>
+              <p class="coin-note">Get 1900 coins total for your biggest reading month.</p>
+            </div>
+            <button type="button" class="store-btn" data-buy="1900">Buy Now</button>
+          </article>
+        </div>
+      </div>
+
+      <div class="store-panel" id="sub" role="tabpanel" hidden>
+        <div class="section-heading">
+          <div class="section-title">Subscription Plans</div>
+          <div class="section-copy">Choose the tier that fits your reading rhythm while keeping the same structure from your original page.</div>
+        </div>
+
+        <div class="plan-list">
+          <article class="plan-card basic-plan">
+            <div class="plan-tag">Basic</div>
+            <h2>Basic</h2>
+            <p class="plan-price">16,000 MMK <span>/ month</span></p>
+            <ul class="plan-features">
+              <li>Access to select premium content</li>
+              <li>Ad-free reading</li>
+              <li>50 bonus coins monthly</li>
+            </ul>
+            <button type="button" class="plan-btn">Subscribe</button>
+          </article>
+
+          <article class="plan-card premium-plan">
+            <div class="plan-tag">Current</div>
+            <h2>Premium</h2>
+            <p class="plan-price">30,000 MMK <span>/ month</span></p>
+            <ul class="plan-features">
+              <li>Unlimited access to all content</li>
+              <li>Ad-free reading</li>
+              <li>150 bonus coins monthly</li>
+              <li>Early access to new releases</li>
+              <li>Exclusive subscriber badges</li>
+            </ul>
+            <button type="button" class="plan-btn current">Current Plan</button>
+          </article>
+
+          <article class="plan-card pro-plan">
+            <div class="plan-tag">Pro</div>
+            <h2>Pro</h2>
+            <p class="plan-price">50,000 MMK <span>/ month</span></p>
+            <ul class="plan-features">
+              <li>Everything in Premium</li>
+              <li>300 bonus coins monthly</li>
+              <li>Direct messaging with authors</li>
+              <li>Vote on upcoming content</li>
+              <li>Custom profile themes</li>
+            </ul>
+            <button type="button" class="plan-btn accent">Subscribe</button>
+          </article>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <div id="site-nav"></div>
+  <script src="assets/js/layout.js"></script>
+  <script src="assets/js/store.js"></script>
+</body>
+</html>

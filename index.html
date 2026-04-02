@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <title>TOOU</title>
+  <link rel="stylesheet" href="assets/css/home.css">
+  <link rel="stylesheet" href="assets/css/shared.css">
+</head>
+<body data-page="home">
+<div class="container">
+<div id="site-header"></div>
+
+<section class="wt-hero">
+
+    <div class="wt-bg" id="wtBg"></div>
+    <div class="wt-overlay"></div>
+    <div class="wt-glow wt-glow-left"></div>
+    <div class="wt-glow wt-glow-right"></div>
+
+    <div class="wt-container">
+        <div class="wt-topline">
+            <span class="wt-badge">Featured Universe</span>
+            <span class="wt-badge wt-badge-soft" id="wtLiveMeta">4 formats, one reading home</span>
+        </div>
+        <h1 id="wtTitle">Enjoy Your Webtoons</h1>
+        <p id="wtDesc">Discover amazing webtoon stories</p>
+        <div class="wt-hero-actions">
+            <a href="explore.html" class="wt-hero-btn wt-hero-btn-primary">Explore</a>
+            <a href="signup.html" class="wt-hero-btn wt-hero-btn-secondary">Start Reading</a>
+        </div>
+
+        <div class="wt-carousel" id="wtCarousel"></div>
+        <div class="wt-indicators" id="wtIndicators"></div>
+    </div>
+
+</section>
+
+  
+  <!-- TRENDING NOW WITH CATEGORIES -->
+  <div class="section">
+    <div class="section-title">Trending Now</div>
+
+    <!-- Category Tabs -->
+    <div id="category-tabs">
+      <button class="category-btn active" data-category="all">All</button>
+      <button class="category-btn" data-category="webtoon">Webtoon</button>
+      <button class="category-btn" data-category="novel">Novel</button>
+      <button class="category-btn" data-category="cartoon">Cartoon</button>
+      <button class="category-btn" data-category="comics">Comics</button>
+      <button class="category-btn" data-category="other">Other</button>
+    </div>
+
+    <!-- Trending Cards -->
+    <div class="trending" id="trending"></div>
+  </div>
+
+  <!-- NEW RELEASES SECTION -->
+  <div class="section">
+    <div class="section-title">New Releases</div>
+    <div class="trending" id="newReleases"></div>
+  </div>
+
+  <!-- ADS SECTION -->
+<section class="ads-section">
+
+  <div class="ads-container">
+
+    <!-- AD CARD 1 -->
+    <div class="ad-card">
+      <img src="images/ad1.jpg" alt="Ad 1">
+      <div class="ad-overlay"></div>
+      <div class="ad-text">Big Sale - Up to 50% Off</div>
+    </div>
+
+    <!-- AD CARD 2 -->
+    <div class="ad-card">
+      <img src="images/ad2.jpg" alt="Ad 2">
+      <div class="ad-overlay"></div>
+      <div class="ad-text">New Novels Released</div>
+    </div>
+
+    <!-- AD CARD 3 -->
+    <div class="ad-card">
+      <img src="images/ad3.jpg" alt="Ad 3">
+      <div class="ad-overlay"></div>
+      <div class="ad-text">Play & Earn Rewards</div>
+    </div>
+
+    <!-- AD CARD 4 -->
+    <div class="ad-card">
+      <img src="images/ad4.jpg" alt="Ad 4">
+      <div class="ad-overlay"></div>
+      <div class="ad-text">Premium Content Unlock</div>
+    </div>
+
+  </div>
+
+</section>
+
+<!-- TOOU TOP PICKS -->
+<div class="section">
+  <div class="section-title">🔥 TOOU Top Picks</div>
+  <div class="trending" id="topPicks"></div>
+</div>
+
+<!-- BINGE-WORTHY SERIES -->
+<div class="section">
+  <div class="section-title">📺 Binge-worthy Series</div>
+  <div class="trending" id="bingeSeries"></div>
+</div>
+
+<!-- HERO / SLIDESHOW -->
+  <div class="hero" id="hero"></div>
+
+<!-- KNOWLEDGE BOOKS -->
+<div class="section">
+  <div class="section-title">📚 Knowledge Books</div>
+  <div class="trending" id="knowledgeBooks"></div>
+</div>
+
+
+  <!-- STUDIOS SECTION -->
+  <div class="section">
+    <div class="section-title">Studios</div>
+    <div class="studios" id="studios"></div>
+  </div>
+  
+  <!-- RECOMMENDED FOR YOU SECTION -->
+  <div class="section">
+    <div class="section-title">Recommended For You</div>
+    <div class="recommended" id="recommended"></div>
+  </div>
+
+</div>
+
+<!-- NAVBAR -->
+<div id="site-nav"></div>
+<script src="assets/js/layout.js"></script>
+<script src="assets/js/home.js"></script>
+</body>
+</html>
+
+

@@ -1,0 +1,503 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TooU Detail</title>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  font-family: Arial, sans-serif;
+  background: #fff;
+  color: #111;
+}
+
+.back-button {
+  position: absolute;
+  top: 14px;
+  left: 14px;
+  z-index: 3;
+  border: none;
+  border-radius: 999px;
+  padding: 10px 14px;
+  background: rgba(18, 12, 31, 0.55);
+  color: #fff;
+  backdrop-filter: blur(10px);
+  font-size: 13px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.app {
+  display: flex;
+  min-height: 100vh;
+}
+
+.left {
+  width: 100%;
+  max-width: 600px;
+  margin: auto;
+  background: #fff;
+}
+
+@media (min-width: 1024px) {
+  .app {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .left {
+    max-width: 100%;
+    border-left: 1px solid #eee;
+    height: 100vh;
+    overflow-y: auto;
+  }
+}
+
+.hero {
+  position: relative;
+  height: 260px;
+}
+
+.hero img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.82), transparent 58%);
+}
+
+.hero-content {
+  position: absolute;
+  bottom: 15px;
+  left: 15px;
+  color: white;
+  z-index: 2;
+}
+
+.tag {
+  background: blueviolet;
+  padding: 4px 10px;
+  border-radius: 20px;
+  font-size: 12px;
+  display: inline-block;
+  margin-bottom: 8px;
+}
+
+.title {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.author {
+  font-size: 13px;
+  color: #ddd;
+  margin-top: 2px;
+}
+
+.stats {
+  font-size: 12px;
+  color: #ccc;
+  margin-top: 4px;
+}
+
+.content {
+  padding: 15px;
+}
+
+.buttons {
+  display: flex;
+  gap: 10px;
+  margin-top: 15px;
+}
+
+button {
+  flex: 1;
+  padding: 10px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  font-family: inherit;
+}
+
+.like-btn {
+  background: #eee;
+}
+
+.read-btn {
+  background: blueviolet;
+  color: white;
+}
+
+.tag-pill {
+  background: #eee;
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-size: 12px;
+  margin-right: 5px;
+  display: inline-block;
+  margin-top: 10px;
+}
+
+.section-title {
+  margin-top: 20px;
+  font-weight: bold;
+}
+
+.synopsis {
+  color: #555;
+  font-size: 14px;
+  margin-top: 8px;
+}
+
+.filter {
+  margin: 10px 0;
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.filter button {
+  padding: 6px 10px;
+  font-size: 12px;
+  flex: 0 0 auto;
+}
+
+.episode {
+  padding: 10px;
+  border-radius: 10px;
+  background: #f5f5f5;
+  margin-bottom: 8px;
+  cursor: pointer;
+}
+
+.locked {
+  opacity: 0.5;
+}
+
+.reader {
+  display: none;
+  background: black;
+  overflow-y: auto;
+  position: relative;
+}
+
+.reader img {
+  width: 100%;
+  display: block;
+}
+
+.reader-topbar {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 12px;
+  background: rgba(7, 7, 11, 0.72);
+  backdrop-filter: blur(12px);
+}
+
+.reader-back {
+  border: none;
+  border-radius: 999px;
+  padding: 10px 14px;
+  background: rgba(255, 255, 255, 0.12);
+  color: #fff;
+  font-size: 13px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.episode-jump {
+  min-width: 126px;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: 12px;
+  padding: 10px 12px;
+  background: rgba(255, 255, 255, 0.12);
+  color: #fff;
+  font: inherit;
+}
+
+.reader-bottom {
+  padding: 16px 14px 22px;
+  background: #111;
+  color: #fff;
+}
+
+.reader-actions {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.reader-action-btn {
+  border: none;
+  border-radius: 999px;
+  padding: 10px 14px;
+  background: rgba(138, 98, 255, 0.2);
+  color: #fff;
+  font: inherit;
+  font-size: 13px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.reader-stats {
+  margin-top: 12px;
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+  color: rgba(255, 255, 255, 0.74);
+  font-size: 13px;
+}
+
+.comment-panel {
+  margin-top: 18px;
+  border-radius: 18px;
+  padding: 14px;
+  background: rgba(255, 255, 255, 0.06);
+}
+
+.comment-panel h3 {
+  font-size: 16px;
+}
+
+.comment-list {
+  display: grid;
+  gap: 10px;
+  margin-top: 12px;
+}
+
+.comment-item {
+  border-radius: 14px;
+  padding: 12px;
+  background: rgba(255, 255, 255, 0.06);
+}
+
+.comment-user {
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.comment-body {
+  margin-top: 5px;
+  font-size: 13px;
+  line-height: 1.55;
+  color: rgba(255, 255, 255, 0.78);
+}
+
+@media (min-width: 1024px) {
+  .reader {
+    height: 100vh;
+    display: block;
+  }
+}
+
+.reader.mobile-active {
+  position: fixed;
+  inset: 0;
+  display: block;
+  z-index: 999;
+}
+
+.recommend {
+  display: flex;
+  gap: 10px;
+  overflow-x: auto;
+  margin-top: 10px;
+  padding-bottom: 4px;
+}
+
+.card {
+  min-width: 120px;
+}
+
+.card img {
+  width: 100%;
+  aspect-ratio: 2 / 3;
+  object-fit: cover;
+  border-radius: 10px;
+}
+</style>
+</head>
+<body>
+<div class="app">
+  <div class="left">
+    <div class="hero">
+      <button class="back-button" type="button" onclick="goBack()">← Back</button>
+      <img src="images/image1.png" alt="Shadows of Destiny cover">
+      <div class="hero-content">
+        <div class="tag">WEBTOON ⭐ 4.8</div>
+        <div class="title">Shadows of Destiny</div>
+        <div class="author">Emma Chen</div>
+        <div class="stats">👁 892K · ❤️ 45K · 💬 1.2K</div>
+      </div>
+    </div>
+
+    <div class="content">
+      <div class="buttons">
+        <button class="like-btn">♡ Like</button>
+        <button class="read-btn" onclick="openEpisode('ep1')">Start Reading</button>
+      </div>
+
+      <div>
+        <span class="tag-pill">#Fantasy</span>
+        <span class="tag-pill">#Action</span>
+        <span class="tag-pill">#Adventure</span>
+      </div>
+
+      <div class="section-title">Synopsis</div>
+      <div class="synopsis">
+        A warrior must unite fractured realms using ancient shadow powers.
+      </div>
+
+      <div class="section-title">Episodes</div>
+      <div class="filter">
+        <button onclick="filterEpisodes('all')">All</button>
+        <button onclick="filterEpisodes('free')">Free</button>
+        <button onclick="filterEpisodes('premium')">Premium</button>
+      </div>
+
+      <div id="episodeList"></div>
+
+      <div class="section-title">You May Also Like</div>
+      <div class="recommend">
+        <div class="card"><img src="images/image1.png" alt="Recommended title 1"></div>
+        <div class="card"><img src="images/image1.png" alt="Recommended title 2"></div>
+        <div class="card"><img src="images/image1.png" alt="Recommended title 3"></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="reader" id="reader"></div>
+</div>
+
+<script>
+const episodes = [
+  { id: "ep1", title: "Episode 1", free: true, likes: "5.1K", views: "18.3K", comments: [{ user: "Luna", body: "The opening hook is really strong." }, { user: "Kai", body: "I like how the visual mood is introduced." }], images: ["images/image1.png", "images/image1.png"] },
+  { id: "ep2", title: "Episode 2", free: true, likes: "4.8K", views: "16.9K", comments: [{ user: "Mira", body: "That cliffhanger was worth the build-up." }], images: ["images/image1.png"] },
+  { id: "ep3", title: "Episode 3", free: false },
+  { id: "ep4", title: "Episode 4", free: false },
+  { id: "ep5", title: "Episode 5", free: false }
+];
+
+function renderEpisodes(list) {
+  const container = document.getElementById("episodeList");
+  container.innerHTML = "";
+
+  list.forEach((ep) => {
+    const div = document.createElement("div");
+    div.className = "episode " + (ep.free ? "" : "locked");
+    div.innerText = ep.title + (ep.free ? " 🔓" : " 🔒");
+
+    if (ep.free) {
+      div.onclick = () => openEpisode(ep.id);
+    }
+
+    container.appendChild(div);
+  });
+}
+
+function filterEpisodes(type) {
+  if (type === "all") renderEpisodes(episodes);
+  if (type === "free") renderEpisodes(episodes.filter((e) => e.free));
+  if (type === "premium") renderEpisodes(episodes.filter((e) => !e.free));
+}
+
+function openEpisode(id) {
+  const reader = document.getElementById("reader");
+  const ep = episodes.find((e) => e.id === id);
+
+  if (!ep || !ep.free) return;
+
+  const selectorOptions = episodes.map((item, index) => `
+    <option value="${item.id}" ${item.id === ep.id ? "selected" : ""}>
+      ${index + 1}. ${item.title}${item.free ? "" : " (Locked)"}
+    </option>
+  `).join("");
+
+  const commentsMarkup = (ep.comments || []).map((comment) => `
+    <div class="comment-item">
+      <div class="comment-user">${comment.user}</div>
+      <div class="comment-body">${comment.body}</div>
+    </div>
+  `).join("");
+
+  reader.innerHTML = `
+    <div class="reader-topbar">
+      <button class="reader-back" type="button" onclick="closeReader()">Back</button>
+      <select class="episode-jump" id="episodeJump" onchange="handleEpisodeJump(this.value)">
+        ${selectorOptions}
+      </select>
+    </div>
+  `;
+
+  ep.images.forEach((src) => {
+    const img = document.createElement("img");
+    img.src = src;
+    reader.appendChild(img);
+  });
+
+  const bottom = document.createElement("div");
+  bottom.className = "reader-bottom";
+  bottom.innerHTML = `
+    <div class="reader-actions">
+      <button class="reader-action-btn" type="button">♡ Like Episode</button>
+      <button class="reader-action-btn" type="button">💬 Add Comment</button>
+    </div>
+    <div class="reader-stats">
+      <span>👁 ${ep.views || "--"}</span>
+      <span>❤️ ${ep.likes || "--"}</span>
+      <span>💬 ${(ep.comments || []).length}</span>
+    </div>
+    <div class="comment-panel">
+      <h3>Comments</h3>
+      <div class="comment-list">
+        ${commentsMarkup || '<div class="comment-body">No comments yet.</div>'}
+      </div>
+    </div>
+  `;
+  reader.appendChild(bottom);
+
+  if (window.innerWidth < 1024) {
+    reader.classList.add("mobile-active");
+  }
+}
+
+function goBack() {
+  if (window.history.length > 1) {
+    window.history.back();
+    return;
+  }
+  window.location.href = "index.html";
+}
+
+function handleEpisodeJump(id) {
+  const target = episodes.find((episode) => episode.id === id);
+  if (!target || !target.free) return;
+  openEpisode(id);
+}
+
+function closeReader() {
+  if (window.innerWidth < 1024) {
+    document.getElementById("reader").classList.remove("mobile-active");
+  }
+}
+
+renderEpisodes(episodes);
+
+if (window.innerWidth >= 1024) {
+  openEpisode("ep1");
+}
+</script>
+</body>
+</html>

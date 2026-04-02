@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <title>Library - TooU</title>
+  <link rel="stylesheet" href="assets/css/library.css">
+  <link rel="stylesheet" href="assets/css/shared.css">
+</head>
+<body data-page="library">
+  <div class="container">
+    <div id="site-header"></div>
+
+    <section class="library-hero">
+      <div class="library-kicker">Library</div>
+      <h1>Keep reading where you left off.</h1>
+      <p>Your recent episodes, highlighted promotions, and tailored suggestions all live here in one mobile-first reading hub.</p>
+    </section>
+
+    <section class="section">
+      <div class="section-heading">
+        <div>
+          <div class="section-title">Reading History</div>
+          <div class="section-copy">Episodes and chapters you recently opened across webtoon, comics, knowledge, and novels.</div>
+        </div>
+      </div>
+      <div class="history-list" id="historyList"></div>
+    </section>
+
+    <section class="section">
+      <div class="section-heading">
+        <div class="section-title">Advertisement</div>
+      </div>
+      <div class="ads-row" id="adsRow"></div>
+    </section>
+
+    <section class="section">
+      <div class="section-heading">
+        <div>
+          <div class="section-title">Promotion</div>
+          <div class="section-copy">Featured banners and seasonal drops, shown as a swipeable slideshow.</div>
+        </div>
+      </div>
+      <div class="promo-slider" id="promoSlider">
+        <div class="promo-track" id="promoTrack"></div>
+        <div class="promo-dots" id="promoDots"></div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-heading">
+        <div>
+          <div class="section-title">You May Also Like</div>
+          <div class="section-copy">Recommendations shaped like the homepage cards so the browsing experience stays consistent.</div>
+        </div>
+      </div>
+      <div class="recommend-rail" id="recommendRail"></div>
+    </section>
+  </div>
+
+  <div id="site-nav"></div>
+  <script src="assets/js/layout.js"></script>
+  <script src="assets/js/library.js"></script>
+</body>
+</html>

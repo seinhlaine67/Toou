@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <title>Profile - TooU</title>
+  <link rel="stylesheet" href="assets/css/profile.css">
+  <link rel="stylesheet" href="assets/css/shared.css">
+</head>
+<body data-page="profile">
+  <div class="container">
+    <div id="site-header"></div>
+
+    <section class="profile-shell">
+      <article class="profile-card">
+        <div class="profile-row">
+          <img class="profile-avatar" id="profileAvatar" src="https://i.pravatar.cc/120?img=12" alt="Profile avatar">
+          <div class="profile-copy">
+            <h1 id="profileName">Guest Reader</h1>
+            <p class="subtext" id="profileEmail">Create an account to personalize your profile.</p>
+            <span class="role-badge" id="profileBadge">Reader</span>
+          </div>
+        </div>
+
+        <p class="profile-bio" id="profileBio">Content enthusiast and aspiring writer.</p>
+
+        <div class="stats">
+          <div class="stat-box">
+            <strong id="profileCoins">0</strong>
+            <span>Coins</span>
+          </div>
+          <div class="stat-box">
+            <strong id="profilePlan">Reader</strong>
+            <span>Status</span>
+          </div>
+        </div>
+      </article>
+
+      <article class="profile-section split-card">
+        <div>
+          <h2>Switch Mode</h2>
+          <p id="modeDescription">Currently in Reader mode</p>
+        </div>
+        <button type="button" class="action-btn" id="switchModeBtn">Writer Mode</button>
+      </article>
+
+      <article class="profile-section menu-card">
+        <button type="button" class="menu-item" data-target="edit">
+          <span><i class="fa-regular fa-pen-to-square"></i>Edit Profile</span>
+          <span class="arrow"><i class="fa-solid fa-angle-right"></i></span>
+        </button>
+        <button type="button" class="menu-item" data-target="history">
+          <span><i class="fa-solid fa-book-open-reader"></i>Reading History</span>
+          <span class="arrow"><i class="fa-solid fa-angle-right"></i></span>
+        </button>
+        <button type="button" class="menu-item" data-target="purchase">
+          <span><i class="fa-regular fa-rectangle-list"></i>Purchase History</span>
+          <span class="arrow"><i class="fa-solid fa-angle-right"></i></span>
+        </button>
+        <button type="button" class="menu-item" data-target="settings">
+          <span><i class="fa-solid fa-gear"></i>Settings</span>
+          <span class="arrow"><i class="fa-solid fa-angle-right"></i></span>
+        </button>
+      </article>
+
+      <button type="button" class="logout-btn" id="logoutBtn">Logout</button>
+    </section>
+  </div>
+
+  <div id="site-nav"></div>
+  <script src="assets/js/layout.js"></script>
+  <script src="assets/js/profile.js"></script>
+</body>
+</html>

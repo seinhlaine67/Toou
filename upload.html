@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<title>Creator Upload - TooU</title>
+<link rel="stylesheet" href="assets/css/shared.css">
+<link rel="stylesheet" href="assets/css/upload.css">
+</head>
+<body data-page="upload">
+<div id="site-header"></div>
+
+<main class="creator-shell">
+  <section class="creator-hero">
+    <div class="creator-kicker">Creator Studio</div>
+    <h1>Publish stories with a flow that fits the format.</h1>
+    <p>Choose your content type, fill the overview, then build episodes as image-based webtoon releases or text-first chapters.</p>
+  </section>
+
+  <section class="creator-layout">
+    <div class="creator-main">
+      <form class="upload-form">
+        <div class="type-picker" aria-label="Content type">
+          <button type="button" class="type-pill active" data-type="webtoon">Webtoon</button>
+          <button type="button" class="type-pill" data-type="comics">Comics</button>
+          <button type="button" class="type-pill" data-type="knowledge">Knowledge</button>
+          <button type="button" class="type-pill" data-type="novel">Novel</button>
+        </div>
+
+        <section class="form-panel">
+          <div class="panel-heading">
+            <h2>Series Overview</h2>
+            <p>Set the public-facing information readers will see before they open your story.</p>
+          </div>
+
+          <div class="field-grid">
+            <label class="field">
+              <span>Series Title</span>
+              <input type="text" placeholder="Enter the story title">
+            </label>
+            <label class="field">
+              <span>Author Name</span>
+              <input type="text" placeholder="Pen name or studio name">
+            </label>
+            <label class="field field-full">
+              <span>Cover Image</span>
+              <div class="upload-drop">
+                <i class="fa-regular fa-image"></i>
+                <strong>Upload your cover</strong>
+                <small>Recommended portrait cover, 2:3 ratio. JPG, PNG, or WEBP.</small>
+                <input type="file" accept="image/*">
+              </div>
+            </label>
+            <label class="field field-full">
+              <span>Synopsis</span>
+              <textarea rows="5" placeholder="Write a short synopsis that introduces the story and hooks the reader."></textarea>
+            </label>
+            <label class="field field-full">
+              <span>Hashtags</span>
+              <input type="text" placeholder="#fantasy #romance #schoollife">
+            </label>
+          </div>
+        </section>
+
+        <section class="form-panel">
+          <div class="panel-heading">
+            <h2>Publishing Setup</h2>
+            <p>Choose the format and monetization behavior for new episodes.</p>
+          </div>
+
+          <div class="field-grid">
+            <label class="field">
+              <span>Primary Genre</span>
+              <select>
+                <option>Fantasy</option>
+                <option>Action</option>
+                <option>Romance</option>
+                <option>Mystery</option>
+                <option>Knowledge</option>
+                <option>Drama</option>
+              </select>
+            </label>
+            <label class="field">
+              <span>Audience</span>
+              <select>
+                <option>General</option>
+                <option>Teen</option>
+                <option>Mature</option>
+              </select>
+            </label>
+            <div class="field field-full">
+              <span>Access Type</span>
+              <div class="toggle-group">
+                <label class="toggle-card">
+                  <input type="radio" name="access" checked>
+                  <span>Free</span>
+                  <small>Anyone can read the episode right away.</small>
+                </label>
+                <label class="toggle-card">
+                  <input type="radio" name="access">
+                  <span>Premium</span>
+                  <small>Reserve the episode for paid access or unlock rules.</small>
+                </label>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="form-panel">
+          <div class="panel-heading">
+            <h2 id="episodeHeading">Episode Builder</h2>
+            <p id="episodeDescription">For webtoon and comics, creators usually upload a vertical stack of episode images plus a thumbnail. This builder keeps that flow.</p>
+          </div>
+
+          <div class="builder-switch" id="builderSwitch">
+            <div class="builder-card active" data-builder="visual">
+              <strong>Image Episode</strong>
+              <span>Best for webtoon and comics releases</span>
+            </div>
+            <div class="builder-card" data-builder="text">
+              <strong>Text Chapter</strong>
+              <span>Best for novel and knowledge publishing</span>
+            </div>
+          </div>
+
+          <div class="episode-stack" id="episodeStack">
+            <article class="episode-editor">
+              <div class="episode-editor-head">
+                <h3>Episode 1</h3>
+                <button type="button" class="mini-btn">Duplicate</button>
+              </div>
+
+              <div class="field-grid">
+                <label class="field">
+                  <span>Episode Title</span>
+                  <input type="text" placeholder="Episode title">
+                </label>
+                <label class="field">
+                  <span>Release</span>
+                  <select>
+                    <option>Publish now</option>
+                    <option>Save as draft</option>
+                    <option>Schedule later</option>
+                  </select>
+                </label>
+                <label class="field field-full visual-only">
+                  <span>Episode Thumbnail</span>
+                  <div class="upload-drop compact">
+                    <i class="fa-regular fa-image"></i>
+                    <strong>Upload thumbnail</strong>
+                    <input type="file" accept="image/*">
+                  </div>
+                </label>
+                <label class="field field-full visual-only">
+                  <span>Episode Panels</span>
+                  <div class="upload-drop">
+                    <i class="fa-regular fa-images"></i>
+                    <strong>Drop multiple images or select a ZIP</strong>
+                    <small>Ideal for long vertical scrolling episodes, JPG/PNG/WEBP or ZIP package.</small>
+                    <input type="file" accept="image/*,.zip" multiple>
+                  </div>
+                </label>
+                <label class="field field-full text-only hidden">
+                  <span>Chapter Body</span>
+                  <textarea rows="11" placeholder="Write the full episode or chapter here. This is ideal for novels and knowledge content."></textarea>
+                </label>
+                <label class="field field-full">
+                  <span>Episode Notes</span>
+                  <textarea rows="3" placeholder="Optional teaser, editor note, or reading note."></textarea>
+                </label>
+              </div>
+            </article>
+          </div>
+
+          <div class="episode-actions">
+            <button type="button" class="secondary-action">+ Add Another Episode</button>
+            <button type="button" class="primary-action">Preview Submission</button>
+          </div>
+        </section>
+      </form>
+    </div>
+
+    <aside class="creator-sidebar">
+      <section class="side-panel">
+        <h2>Format Guide</h2>
+        <ul class="guide-list" id="guideList">
+          <li>Upload a cover, synopsis, hashtags, and episode metadata first.</li>
+          <li>Use vertical image episodes for webtoon and comics.</li>
+          <li>Keep each image sharp and easy to read on mobile.</li>
+        </ul>
+      </section>
+
+      <section class="side-panel">
+        <h2>Creator Checklist</h2>
+        <div class="check-item"><i class="fa-solid fa-check"></i><span>Cover matches your story format</span></div>
+        <div class="check-item"><i class="fa-solid fa-check"></i><span>Genre and access type are selected</span></div>
+        <div class="check-item"><i class="fa-solid fa-check"></i><span>Episode structure is ready for readers</span></div>
+      </section>
+
+      <section class="side-panel accent-panel">
+        <h2>What creators usually upload</h2>
+        <p id="formatHint">Webtoon creators typically publish a portrait cover, an episode thumbnail, and a long sequence of vertically stacked images for each episode.</p>
+      </section>
+    </aside>
+  </section>
+</main>
+
+<div id="site-nav"></div>
+<script src="assets/js/layout.js"></script>
+<script src="assets/js/upload.js"></script>
+</body>
+</html>
